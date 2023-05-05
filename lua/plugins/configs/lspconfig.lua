@@ -11,9 +11,9 @@ M.on_attach = function(client, bufnr)
   utils.load_mappings("lspconfig", { buffer = bufnr })
 
   local optional = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set("n", "gh", builtin.lsp_definitions, optional)        -- gd to go to definition
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, optional)               -- K to hover docs
-  vim.keymap.set("n", "gr", "<Cmd> Lspsaga rename<CR>", optional)     -- gr to rename
+  vim.keymap.set("n", "gh", builtin.lsp_definitions, optional) -- gd to go to definition
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, optional) -- K to hover docs
+  vim.keymap.set("n", "gr", "<Cmd> Lspsaga rename<CR>", optional) -- gr to rename
   vim.keymap.set("n", "<C-i>", builtin.lsp_implementations, optional) -- gr to rename
   vim.keymap.set("n", "gi", "<Cmd> Lspsaga show_line_diagnostics<CR>", optional)
   vim.keymap.set("n", "F", builtin.lsp_document_symbols, optional)
