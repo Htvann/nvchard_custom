@@ -94,6 +94,9 @@ local default_plugins = {
 
   -- git stuff
   {
+    "akinsho/git-conflict.nvim",
+  },
+  {
     "lewis6991/gitsigns.nvim",
     ft = { "gitcommit", "diff" },
     init = function()
@@ -117,6 +120,7 @@ local default_plugins = {
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "git")
       require("gitsigns").setup(opts)
+      require "plugins.configs.gitsigns"
     end,
   },
 

@@ -11,6 +11,7 @@ M.on_attach = function(client, bufnr)
   utils.load_mappings("lspconfig", { buffer = bufnr })
 
   local optional = { noremap = true, silent = true, buffer = bufnr }
+
   vim.keymap.set("n", "gh", builtin.lsp_definitions, optional) -- gd to go to definition
   vim.keymap.set("n", "K", vim.lsp.buf.hover, optional) -- K to hover docs
   vim.keymap.set("n", "gr", "<Cmd> Lspsaga rename<CR>", optional) -- gr to rename
@@ -50,7 +51,6 @@ M.capabilities.textDocument.completion.completionItem = {
 require("lspconfig").lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
-
   settings = {
     Lua = {
       diagnostics = {
@@ -68,6 +68,15 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
+}
+require("lspconfig").tsserver.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").solang.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
 }
 
 return M
