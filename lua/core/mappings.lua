@@ -121,19 +121,19 @@ M.lspconfig = {
   -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
 
   n = {
-    ["gD"] = {
-      function()
-        vim.lsp.buf.declaration()
-      end,
-      "lsp declaration",
-    },
+    -- ["gD"] = {
+    --   function()
+    --     vim.lsp.buf.declaration()
+    --   end,
+    --   "lsp declaration",
+    -- },
 
-    ["gd"] = {
-      function()
-        vim.lsp.buf.definition()
-      end,
-      "lsp definition",
-    },
+    -- ["gd"] = {
+    --   function()
+    --     vim.lsp.buf.definition()
+    --   end,
+    --   "lsp definition",
+    -- },
 
     ["K"] = {
       function()
@@ -142,12 +142,12 @@ M.lspconfig = {
       "lsp hover",
     },
 
-    ["gi"] = {
-      function()
-        vim.lsp.buf.implementation()
-      end,
-      "lsp implementation",
-    },
+    -- ["gi"] = {
+    --   function()
+    --     vim.lsp.buf.implementation()
+    --   end,
+    --   "lsp implementation",
+    -- },
 
     ["<leader>ls"] = {
       function()

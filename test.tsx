@@ -1,14 +1,5 @@
-interface I {
-  id: string;
+import { IMain } from ".";
+
+export function demo(a: IMain) {
+  return a;
 }
-
-const A: I = {
-  id: "123",
-};
-
-function demo(a: string) {
-  console.log(a);
-  return 123;
-}
-
-demo("123");

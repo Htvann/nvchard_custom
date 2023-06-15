@@ -162,7 +162,13 @@ local default_plugins = {
       require "plugins.configs.lspconfig"
     end,
   },
-
+  {
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      require("lspsaga").setup {}
+    end,
+  },
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
