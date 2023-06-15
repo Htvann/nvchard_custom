@@ -22,8 +22,8 @@ M.on_attach = function(client, bufnr)
 
   -- newversion
   vim.keymap.set("n", "gi", "<cmd> Lspsaga show_line_diagnostics<CR>", optional)
-  vim.keymap.set("n", "gh", vim.lsp.buf.definition, optional)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, optional)
+  -- vim.keymap.set("n", "gh", vim.lsp.buf.definition, optional)
+  -- vim.keymap.set("n", "K", vim.lsp.buf.hover, optional)
   vim.keymap.set("n", "gr", "<cmd> Lspsaga rename<CR>", optional) -- gr to rename
 
   if client.server_capabilities.signatureHelpProvider then
