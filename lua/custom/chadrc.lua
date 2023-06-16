@@ -1,4 +1,4 @@
----@type ChadrcConfig 
- local M = {}
- M.ui = {theme = 'pastelDark'}
- return M
+---@type ChadrcConfig
+local M = {}
+M.ui = { theme = "bearded-arc" }
+return M

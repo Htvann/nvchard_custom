@@ -11,7 +11,11 @@ local utils = require "core.utils"
 M.on_attach = function(client, bufnr)
   utils.load_mappings("lspconfig", { buffer = bufnr })
 
-  local optional = { noremap = true, silent = true, buffer = bufnr }
+  local optional = {
+    noremap = true,
+    silent = true,
+    buffer = bufnr,
+  }
 
   -- vim.keymap.set("n", "gh", builtin.lsp_definitions, optional) -- gd to go to definition
   -- vim.keymap.set("n", "K", vim.lsp.buf.hover, optional) -- K to hover docs

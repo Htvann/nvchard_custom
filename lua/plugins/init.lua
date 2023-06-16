@@ -144,7 +144,10 @@ local default_plugins = {
     end,
   },
 
+  -- "nvim-lsp-installer",
+
   {
+    -- "williamboman/nvim-lsp-installer",
     "neovim/nvim-lspconfig",
     dependencies = {
       -- format & linting

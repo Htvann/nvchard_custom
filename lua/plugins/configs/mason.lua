@@ -3,6 +3,7 @@ local options = {
     "lua-language-server",
     "stylua",
     -- web dev stuff
+    "jsonls",
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
