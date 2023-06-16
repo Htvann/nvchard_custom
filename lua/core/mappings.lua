@@ -128,12 +128,12 @@ M.lspconfig = {
     --   "lsp declaration",
     -- },
 
-    ["gh"] = {
+    --[[ ["gh"] = {
       function()
         vim.lsp.buf.definition()
       end,
       "lsp definition",
-    },
+    }, ]]
 
     ["K"] = {
       function()

@@ -51,6 +51,16 @@ local default_plugins = {
   },
 
   {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        autotag = {
+          enable = true,
+        },
+      }
+    end,
+  },
+  {
     "nvim-tree/nvim-web-devicons",
     opts = function()
       return { override = require("nvchad_ui.icons").devicons }
@@ -298,6 +308,25 @@ local default_plugins = {
     config = function()
       require("Comment").setup()
     end,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    -- config = function()
+    --   require("nvim-treesitter.configs").setup {
+    --     ensure_installed = { "vim", "lua", "javascript", "tsx", "json" },
+    --     highlight = {
+    --       enable = false,
+    --     },
+    --     context_commentstring = {
+    --       enable = true,
+    --     },
+    --   }
+    -- end,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
   },
 
   -- file managing , picker etc

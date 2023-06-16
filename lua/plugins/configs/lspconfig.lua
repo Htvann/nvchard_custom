@@ -1,5 +1,5 @@
 dofile(vim.g.base46_cache .. "lsp")
--- local builtin = require "telescope.builtin"
+local builtin = require "telescope.builtin"
 require "nvchad_ui.lsp"
 local saga = require "lspsaga"
 
@@ -17,7 +17,7 @@ M.on_attach = function(client, bufnr)
     buffer = bufnr,
   }
 
-  -- vim.keymap.set("n", "gh", builtin.lsp_definitions, optional) -- gd to go to definition
+  vim.keymap.set("n", "gh", builtin.lsp_definitions, optional) -- gd to go to definition
   -- vim.keymap.set("n", "K", vim.lsp.buf.hover, optional) -- K to hover docs
   -- vim.keymap.set("n", "gr", "<Cmd> Lspsaga rename<CR>", optional) -- gr to rename
   -- vim.keymap.set("n", "<C-i>", builtin.lsp_implementations, optional) -- gr to rename
