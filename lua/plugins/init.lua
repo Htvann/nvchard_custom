@@ -53,11 +53,7 @@ local default_plugins = {
   {
     "windwp/nvim-ts-autotag",
     config = function()
-      require("nvim-treesitter.configs").setup {
-        autotag = {
-          enable = true,
-        },
-      }
+      require("nvim-ts-autotag").setup()
     end,
   },
   {
@@ -88,17 +84,21 @@ local default_plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
     init = function()
       require("core.utils").lazy_load "nvim-treesitter"
     end,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
-    opts = function()
-      return require "plugins.configs.treesitter"
-    end,
-    config = function(_, opts)
+    -- opts = function()
+    --   return require "plugins.configs.treesitter"
+    -- end,
+    config = function()
       dofile(vim.g.base46_cache .. "syntax")
-      require("nvim-treesitter.configs").setup(opts)
+      -- require("nvim-treesitter.configs").setup()
+      require "plugins.configs.treesitter"
     end,
   },
 
@@ -306,27 +306,8 @@ local default_plugins = {
       require("core.utils").load_mappings "comment"
     end,
     config = function()
-      require("Comment").setup()
+      require "plugins.configs.comment"
     end,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    -- config = function()
-    --   require("nvim-treesitter.configs").setup {
-    --     ensure_installed = { "vim", "lua", "javascript", "tsx", "json" },
-    --     highlight = {
-    --       enable = false,
-    --     },
-    --     context_commentstring = {
-    --       enable = true,
-    --     },
-    --   }
-    -- end,
-    dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
   },
 
   -- file managing , picker etc
