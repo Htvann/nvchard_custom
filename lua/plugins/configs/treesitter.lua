@@ -1,4 +1,4 @@
-local options = {
+require 'nvim-treesitter.configs'.setup {
   highlight = {
     enable = false,
   },
@@ -32,5 +32,3 @@ local options = {
   -- auto install above language parsers
   auto_install = true,
 }
-
-return options
