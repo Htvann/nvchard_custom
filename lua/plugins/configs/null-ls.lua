@@ -12,6 +12,7 @@ local sources = {
   -- formatting.clang_format,
   formatting.stylelint,
   formatting.prettier,
+  -- formatting.forge_fmt,
 
   --[[ code actions ]]
   code_actions.eslint_d.with {
@@ -20,8 +21,21 @@ local sources = {
     end,
   },
 
+  --[[ code_actions.cspell.with {
+    config = {
+      find_json = function(cwd)
+        return vim.fn.expand(cwd .. "/cspell.json")
+      end,
+    },
+  },
+]]
   --[[ diagnostics ]]
   diagnostics.eslint_d.with {
+    condition = function(utils)
+      return utils.root_has_file ".eslintrc"
+    end,
+  },
+  diagnostics.solhint.with {
     condition = function(utils)
       return utils.root_has_file ".eslintrc"
     end,

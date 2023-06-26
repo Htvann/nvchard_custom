@@ -85,9 +85,20 @@ require("lspconfig").tsserver.setup {
   capabilities = M.capabilities,
 }
 
-require("lspconfig").solang.setup {
+local lspconfig = require "lspconfig"
+local configs = require "lspconfig.configs"
+
+configs.solidity = {
+  default_config = {
+    cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+    filetypes = { "solidity" },
+    root_dir = lspconfig.util.find_git_ancestor,
+    single_file_support = true,
+  },
+}
+
+lspconfig.solidity.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 }
-
 return M

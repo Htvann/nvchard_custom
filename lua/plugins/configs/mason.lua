@@ -3,11 +3,12 @@ local options = {
     "lua-language-server",
     "stylua",
     -- web dev stuff
-    "jsonls",
+    -- "jsonls",
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
     "prettier",
+    "nomicfoundation-solidity-language-server"
   }, -- not an option from mason.nvim
 
   PATH = "skip",
