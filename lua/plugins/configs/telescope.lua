@@ -40,7 +40,7 @@ local options = {
       "yarn.lock",
       "*.png",
       "*.svg",
-      ".git/"
+      ".git/",
     },
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     path_display = { "truncate" },
@@ -59,6 +59,28 @@ local options = {
     },
   },
 
+  pickers = {
+    -- Your special builtin config goes in here
+    buffers = {
+      sort_lastused = true,
+      theme = "dropdown",
+      previewer = false,
+      mappings = {},
+    },
+    find_files = {
+      theme = "dropdown",
+    },
+  },
+  extensions = {
+    file_browser = {
+      theme = "dropdown",
+      hijack_netrw = false,
+      grouped = true,
+      initial_mode = "normal",
+      layout_config = { height = 40 },
+      git_status = true,
+    },
+  },
   extensions_list = { "themes", "terms" },
 }
 
