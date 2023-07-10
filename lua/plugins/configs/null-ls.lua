@@ -63,6 +63,14 @@ local async_formatting = function(bufnr)
       end)
     end
   end)
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    virtual_text = {
+      spacing = 5,
+      severity_limit = "Warning",
+    },
+    update_in_insert = true,
+  })
 end
 -- if you want to set up formatting on save, you can use this as a callback
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

@@ -53,7 +53,9 @@ local default_plugins = {
   {
     "windwp/nvim-ts-autotag",
     config = function()
-      require("nvim-ts-autotag").setup()
+      require("nvim-ts-autotag").setup {
+        config = true,
+      }
     end,
   },
   {

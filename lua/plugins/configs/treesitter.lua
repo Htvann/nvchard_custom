@@ -1,4 +1,4 @@
-require 'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup {
   highlight = {
     enable = false,
   },
@@ -32,3 +32,30 @@ require 'nvim-treesitter.configs'.setup {
   -- auto install above language parsers
   auto_install = true,
 }
+
+require("nvim-ts-autotag").setup {
+  filetypes = {
+    "astro",
+    "typescript",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact",
+    "tsx",
+    "jsx",
+    "markdown",
+  },
+  config = true
+}
+
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    underline = true,
+    virtual_text = {
+      spacing = 5,
+      severity_limit = 'Warning',
+    },
+    update_in_insert = true,
+  }
+)
