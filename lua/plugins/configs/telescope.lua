@@ -63,17 +63,17 @@ local options = {
     -- Your special builtin config goes in here
     buffers = {
       sort_lastused = true,
-      theme = "dropdown",
+      -- theme = "dropdown",
       previewer = false,
       mappings = {},
     },
     find_files = {
-      theme = "dropdown",
+      -- theme = "dropdown",
     },
   },
   extensions = {
     file_browser = {
-      theme = "dropdown",
+      -- theme = "dropdown",
       hijack_netrw = false,
       grouped = true,
       initial_mode = "normal",

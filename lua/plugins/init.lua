@@ -329,6 +329,7 @@ local default_plugins = {
     end,
   },
 
+  --nvim bookmark
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
