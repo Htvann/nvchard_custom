@@ -6,6 +6,10 @@ local default_plugins = {
 
   -- nvchad plugins
   { "NvChad/extensions", branch = "v2.0" },
+  --wakatime
+  {
+    "wakatime/vim-wakatime",
+  },
 
   {
     "NvChad/base46",
@@ -329,7 +333,6 @@ local default_plugins = {
     end,
   },
 
-  --nvim bookmark
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
@@ -351,6 +354,15 @@ local default_plugins = {
     end,
   },
 
+  --nvim bookmark
+  {
+    "tomasky/bookmarks.nvim",
+    -- after = "telescope.nvim",
+    event = "VimEnter",
+    config = function()
+      require "plugins.configs.bookmark"
+    end,
+  },
   -- Only load whichkey after all the gui
   {
     "folke/which-key.nvim",

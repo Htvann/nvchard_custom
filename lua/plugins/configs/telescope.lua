@@ -1,3 +1,4 @@
+require("telescope").load_extension "bookmarks"
 local options = {
   defaults = {
     vimgrep_arguments = {
