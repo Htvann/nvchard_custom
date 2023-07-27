@@ -28,6 +28,7 @@ require("nvim-treesitter.configs").setup {
 
   context_commentstring = {
     enable = true,
+    enable_autocmd = false,
   },
   -- auto install above language parsers
   auto_install = true,
@@ -45,17 +46,14 @@ require("nvim-ts-autotag").setup {
     "jsx",
     "markdown",
   },
-  config = true
+  config = true,
 }
 
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    underline = true,
-    virtual_text = {
-      spacing = 5,
-      severity_limit = 'Warning',
-    },
-    update_in_insert = true,
-  }
-)
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  underline = true,
+  virtual_text = {
+    spacing = 5,
+    severity_limit = "Warning",
+  },
+  update_in_insert = true,
+})

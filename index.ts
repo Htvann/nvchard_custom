@@ -1,9 +1,5 @@
-import { demo } from "./test";
+const data = (e: string) => {
+  console.log("string", e);
+};
 
-const mewm = {};
-
-export interface IMain {
-  id: string;
-}
-
-demo({ id: "123" });
+export default data;

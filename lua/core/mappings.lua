@@ -94,26 +94,9 @@ M.tabufline = {
   },
 }
 
-M.comment = {
+--[[ M.comment = {
   plugin = true,
-
-  -- toggle comment in both modes
-  -- n = {
-  --   ["<leader>/"] = {
-  --     function()
-  --       require("Comment.api").toggle.linewise.current()
-  --     end,
-  --     "toggle comment",
-  --   },
-  -- },
-  --
-  -- v = {
-  --   ["<leader>/"] = {
-  --     "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-  --     "toggle comment",
-  --   },
-  -- },
-}
+} ]]
 
 M.lspconfig = {
   plugin = true,
@@ -259,9 +242,9 @@ M.telescope = {
 
   n = {
     -- find
-    ["ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
+    [";;"] = { "<cmd> Telescope find_files <CR>", "find files" },
     -- ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
-    ["f;"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+    ["<leader>;"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
